@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -a -p | tr '\n' ','| sed 's/,/, /g' 
+ls -a -p | tr '\n' ',' | awk '{gsub(/,/, ", "); sub(/, $/, ""); print}' 
